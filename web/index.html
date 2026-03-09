@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Importador Inteligente de Excel</title>
+  <link rel="stylesheet" href="/static/estilos.css" />
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <div>
+        <h1>Importador Inteligente de Excel</h1>
+        <p class="sub">Sistema de Importação Inteligente de Dados Excel com Python e Flask.</p>
+      </div>
+      <button id="btnAtualizar" class="btn secundario">Atualizar</button>
+    </header>
+
+    <section class="card">
+      <h2>Enviar planilha</h2>
+      <p class="muted">Colunas obrigatórias: <code>nome</code>, <code>documento</code>, <code>email</code>, <code>telefone</code>.</p>
+      <div class="linha coluna-mobile">
+        <input id="arquivoExcel" type="file" accept=".xlsx,.xls" />
+        <button id="btnImportar" class="btn">Importar Excel</button>
+      </div>
+      <div id="mensagem" class="alerta" style="display:none;"></div>
+    </section>
+
+    <section class="card">
+      <div class="linha entre">
+        <h2>Importações realizadas</h2>
+        <small class="muted">Clique em uma importação para ver detalhes.</small>
+      </div>
+      <div class="tabela-wrap">
+        <table class="tabela">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Arquivo</th>
+              <th>Total</th>
+              <th>Válidas</th>
+              <th>Inválidas</th>
+              <th>Criado em</th>
+            </tr>
+          </thead>
+          <tbody id="tbodyImportacoes"></tbody>
+        </table>
+      </div>
+      <div class="muted" id="vazioImportacoes" style="display:none;">Nenhuma importação encontrada.</div>
+    </section>
+
+    <section class="grid2">
+      <section class="card">
+        <h2>Linhas válidas</h2>
+        <div class="tabela-wrap detalhes-wrap">
+          <table class="tabela">
+            <thead>
+              <tr>
+                <th>Linha</th>
+                <th>Nome</th>
+                <th>Documento</th>
+                <th>Email</th>
+                <th>Telefone</th>
+              </tr>
+            </thead>
+            <tbody id="tbodyValidos"></tbody>
+          </table>
+        </div>
+        <div class="muted" id="vazioValidos">Selecione uma importação.</div>
+      </section>
+
+      <section class="card">
+        <h2>Linhas inválidas</h2>
+        <div class="tabela-wrap detalhes-wrap">
+          <table class="tabela">
+            <thead>
+              <tr>
+                <th>Linha</th>
+                <th>Nome</th>
+                <th>Documento</th>
+                <th>Motivo</th>
+              </tr>
+            </thead>
+            <tbody id="tbodyInvalidos"></tbody>
+          </table>
+        </div>
+        <div class="muted" id="vazioInvalidos">Selecione uma importação.</div>
+      </section>
+    </section>
+  </div>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
