@@ -1,8 +1,10 @@
 # Importador Inteligente de Excel
 
-Projeto pensado para portfólio **júnior forte**.
+**Projeto desenvolvido para demonstração de habilidades em back-end Python e automação de processamento de dados**.
 
-Este sistema recebe um arquivo Excel, valida os dados, separa linhas válidas e inválidas, salva tudo em banco SQLite e exibe os resultados em um painel web simples.
+Sistema de importação inteligente de dados Excel desenvolvido com Python e Flask.
+
+A aplicação permite enviar planilhas através de uma interface web, realizar validação automática dos dados, separar registros válidos e inválidos, armazenar as informações em banco SQLite e apresentar os resultados em um painel de visualização simples.
 
 ## Tecnologias
 
